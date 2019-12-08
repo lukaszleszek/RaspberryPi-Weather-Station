@@ -21,3 +21,5 @@ SETUP
 6. Find location KEY of Your city
 7. Replace AQI token in showData.py
 8. Add scripts to cron to get updates automaticaly, check example_crontab.txt for working example
+9. Remember to run getData.py first as it prepares data for forecast (12h in advance)
+10. Run showData.py manualy or from cron

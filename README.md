@@ -18,15 +18,20 @@ SETUP
 3. Get free Air Quality Index token - https://aqicn.org/api/
 4. Place both .py files in /home/pi/Pimoroni/unicornhathd/accuweather/ or modify the script to store temporary files in different location
 5. Replace Accuweather keys in getData.py (forecast) and showData.py (current conditions)
+    
     url = "http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/REPLACE_WITH_LOCATION?apikey=REPLACE_WITH_32BYTE_KEY&details=true&metric=true"
     url = "http://dataservice.accuweather.com/currentconditions/v1/REPLACE_WITH_LOCATION?apikey=REPLACE_WITH_32BYTE_KEY&details=true"
     
 6. Find location KEY of Your city and replace it in showData.py
+    
     url = "http://dataservice.accuweather.com/currentconditions/v1/REPLACE_WITH_LOCATION?apikey=REPLACE_WITH_32BYTE_KEY&details=true"
+    
 7. Replace AQI token in showData.py
+    
     url = "http://api.waqi.info/feed/@3392/?token=REPLACE_WITH_TOKEN"
+    
 8. Add scripts to cron to get updates automaticaly,
-    # m h  dom mon dow   command
+   
     # get sensor data every 30 minutes form 6:00 AM to 23:30 PM and store the output
     0,30 6-23 * * * python /home/pi/Pimoroni/unicornhathd/accuweather/showData.py >> /home/pi/Pimoroni/unicornhathd/accuweather/Data.dat
     # clear hat every midnight
